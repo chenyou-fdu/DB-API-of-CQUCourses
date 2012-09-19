@@ -1,0 +1,8 @@
+from DBInfor import InfoGet,CQUCourses
+
+info = InfoGet('root','1','c_test')
+se = info.returnSession()
+
+for i in se.query(CQUCourses).filter(CQUCourses.C_ID == '09001520'):
+    for x in i.getAll():
+        print x
